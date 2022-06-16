@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .caixa {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 50px auto;
+            width: 400px;
+            padding: 20px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        .alerta {
+            padding: 5px;
+            text-align: center;
+            background-color: rgb(255, 0, 0);
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="caixa">
+        <p>Neste div apenas existe um parágrafo</p>
+    </div>
+
+    <button onclick="executar()">Clicar</button>
+
+
+    <script>
+
+        function executar() {
+
+            let show;
+
+            // cria element
+            let novoElement = document.createElement('p');
+            novoElement.className = "alerta";
+            novoElement.innerText = "Esta é uma msg de alerta!";
+
+
+            // adicionar o novo elemento a div existente
+            let elemento = document.querySelector('.caixa');
+            elemento.appendChild(novoElement);
+
+
+            // essa forma não adicionam 4 elementos na tela, pois se trata do mesmo novoElement
+            elemento.appendChild(novoElement);
+            elemento.appendChild(novoElement);
+            elemento.appendChild(novoElement);
+            elemento.appendChild(novoElement);
+
+
+            // essa seria a forma correta, assim ele vai criar varios clone do mesmo elelmento
+            elemento.appendChild(novoElement);
+            elemento.appendChild(novoElement.cloneNode(true));
+            elemento.appendChild(novoElement.cloneNode(true));
+            elemento.appendChild(novoElement.cloneNode(true));
+
+        }
+
+
+    </script>
+</body>
+
+</html>

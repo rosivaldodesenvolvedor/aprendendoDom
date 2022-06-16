@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2 id="hh">Procurando atributos em elementos</h2>
+
+
+    <script>
+        let elemento = document.querySelector('h2');
+
+        // a function hasAttribute verificar se o atributo existe no elemento
+        if (elemento.hasAttribute('id')) {
+            console.log('sim');
+        }
+
+        // a function getAttribute pega o valor do atributo do elemento
+        console.log(elemento.getAttribute('id'));
+
+        // a function setAttribute adicona um atributo e valor no elemento
+        elemento.setAttribute('title', 'titulo do texto');
+
+        // a function removeAttribute remove o atributo do elemento
+        elemento.removeAttribute('title');
+
+        // a function Attribute mostra todos os atributo do elemento
+        console.log(elemento.attributes)
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 1px solid lightgray;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        p {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        Dentro do DIV
+    </div>
+
+    <script>
+        let div = document.querySelector('.container')
+
+
+
+        // adicionando texto no Html
+        // div.insertAdjacentText('beforebegin', 'AAAAAAA');
+        // div.insertAdjacentText('afterbegin', 'BBBBB');
+        // div.insertAdjacentText('beforeend', 'CCCCC');
+        // div.insertAdjacentText('afterend', 'DDDDDDD');
+
+
+        // adicionando HTML dentro do texto
+        // div.insertAdjacentHTML('beforebegin', '<p>AAAAAAA</p>');
+        // div.insertAdjacentHTML('afterbegin', '<p>BBBBB</p>');
+        // div.insertAdjacentHTML('beforeend', '<p>CCCCC</p>');
+        // div.insertAdjacentHTML('afterend', '<p>DDDDDDD</p>');
+
+
+        // adicionando elemento no Html
+
+        let paragrafo = document.createElement('p')
+        paragrafo.innerText = "texto";
+        div.insertAdjacentElement('beforebegin', paragrafo);
+        div.insertAdjacentElement('afterbegin', paragrafo.cloneNode(true));
+        div.insertAdjacentElement('beforeend', paragrafo.cloneNode(true));
+        div.insertAdjacentElement('afterend', paragrafo.cloneNode(true));
+
+    </script>
+
+</body>
+
+</html>
